@@ -17,11 +17,11 @@ let person3 = {
         cupids_candies:"Chocolate Malt"
     }]
 }
-console.log(person3.pizza)
-console.log(person3.tacos)
-console.log(person3.burgers)
-console.log(person3.ice_cream)
-console.log(person3.shakes)
+console.log(person3)
+
+for(let key in person3){
+    console.log(key, person3[key])
+}
 
 
 
@@ -47,24 +47,26 @@ age by 3 years. Use an arrow function for both methods
 
 // Create another arrow function for the addAge method that takes a single parameter
 // Adding to the age 
-class person {
-    constructor(name, age, occupation){
-        this.name= 'name';
-        this.age= 'age';
-        this.occupation= 'occupation';
+function Person(age, name){
+    this.age = age
+    this.name = name
 
+    this.printinfo = () => {
+        console.log(`${name} is ${age} years old.`)
     }
-    
-    printInfo() {
-        return 'Name: ${this.name} \n Age: ${this.age} \n Occupation: ${this.occupation}'
 
+    this.add_age = () => {
+        console.log(age++)
     }
-    
 }
-let person = Gon
-    let Gon = new person('gon','12', 'Hunter');
+const person1 = new Person(12, 'Gon')
+person1.add_age()
+person1.add_age()
+person1.add_age()
+person1.printinfo()
 
-
+const person2 = new Person(29, 'Hisoka')
+person2.printinfo()
 
 
 
@@ -80,19 +82,18 @@ let person = Gon
     If the length is greater than ten console log "Big word". 
     If the length of the string is less than 10 console log "Small Number"
 */
-let p = new Promise((resolve, reject) => {
-    let a = (>10){
-        resolve('Big word')
-    } else {
-        reject('Small word')
-    }
-})
-
-p.then((message)=> {
-    console.log(message)
-}).catch((message) => {
-    console.log(message)
-})
+const exercise =(num) => {
+    return new Promise((resolve, reject) => {
+        if(num.length > 10) {
+            resolve("Big Word")
+        }else {
+            reject("Small Number");
+        }
+    });
+    
+}
+const Word = exercise('Hogwarts')
+console.log(Word)
 
 
 //Code Wars
